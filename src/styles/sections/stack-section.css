@@ -75,8 +75,7 @@
 }
 
 .viva .stack-section__label {
-  /* background-color: #51af3d; */
-  background-color: #0f5431;
+  background-color: #e30511;
   color: #ffffff;
   padding: var(--space-1) var(--space-3);
 }
