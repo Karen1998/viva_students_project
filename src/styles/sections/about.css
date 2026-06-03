@@ -1,0 +1,8 @@
+/* ============================================================
+   Section — About (overrides on top of .info-section)
+   ============================================================ */
+
+/* Image-specific background colour for the About section     */
+.about .info-section__image {
+  background-color: #4a0012;
+}

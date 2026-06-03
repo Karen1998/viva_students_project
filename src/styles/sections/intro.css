@@ -1,0 +1,60 @@
+/* ============================================================
+   Section — Introduction / Hero
+   ============================================================ */
+
+.intro {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('../../assets/images/intro-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Fallback colour shown before/if the image loads */
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gradient overlay — keeps text readable against any photo */
+.intro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+
+/* ── Content block — centered ────────────────────────────── */
+.intro__content {
+  z-index: var(--z-raised);
+  padding: var(--space-8) var(--space-6);
+  max-width: 50rem;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+.intro__name {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: var(--space-3);
+}
+
+/* ── Responsive adjustments (mobile-first) ────────────────── */
+@media (min-width: 1024px) {
+  .intro {
+    min-height: 50vh;
+  }
+
+  .intro__content {
+    padding: var(--space-12) var(--space-16);
+  }
+
+  .intro__name {
+    font-size: var(--text-5xl);
+  }
+}

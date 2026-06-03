@@ -1,0 +1,44 @@
+/* ============================================================
+   Main Stylesheet — import order matters
+   ============================================================ */
+
+/* Tailwind CSS — components & utilities (base/preflight skipped;
+   reset.css below handles normalisation instead) */
+@tailwind components;
+@tailwind utilities;
+
+/* Base */
+@import './base/reset.css';
+@import './base/tokens.css';
+@import './base/typography.css';
+
+/* Layout */
+@import './layout/grid.css';
+
+/* Components */
+@import './components/img-tooltip.css';
+
+/* Sections */
+@import './sections/intro.css';
+@import './sections/info-section.css';
+@import './sections/stack-section.css';
+@import './sections/about.css';
+@import './sections/ideology.css';
+
+/* Pages / Views */
+
+/* ── Scroll Animations ─────────────────────────────────── */
+.will-animate {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .will-animate {
+    opacity: 1 !important;
+  }
+
+  [data-animate] {
+    animation: none !important;
+    transition: none !important;
+  }
+}

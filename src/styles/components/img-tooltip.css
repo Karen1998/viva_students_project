@@ -1,0 +1,35 @@
+/* ============================================================
+   Component — Image Tooltip
+   Shows an image when hovering over the trigger text
+   ============================================================ */
+
+.img-tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.2em;
+  color: var(--color-info);
+}
+
+.img-tooltip__image {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + var(--space-2));
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  background-color: var(--color-neutral-800);
+  border: 1px solid var(--color-neutral-600);
+  border-radius: var(--radius-md);
+  padding: var(--space-2);
+  z-index: var(--z-tooltip);
+  pointer-events: none;
+}
+
+.img-tooltip:hover .img-tooltip__image {
+  display: block;
+}

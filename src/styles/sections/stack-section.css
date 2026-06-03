@@ -1,0 +1,97 @@
+/* ============================================================
+   Component — Stack Section
+   Text on top, full-width image below — for landscape images
+   ============================================================ */
+
+.stack-section {
+  position: relative;
+  padding: var(--space-24) 0 var(--space-20);
+  background-color: var(--color-neutral-900);
+  color: var(--color-neutral-100);
+}
+
+/* ── Section label ───────────────────────────────────────── */
+.stack-section__label {
+  display: block;
+  font-family: var(--font-arnamu);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin-bottom: var(--space-6);
+}
+
+/* ── Inner layout — always a column ──────────────────────── */
+.stack-section__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+/* ── Text block ───────────────────────────────────────────── */
+.stack-section__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.stack-section__title {
+  font-family: var(--font-arnamu);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-neutral-100);
+}
+
+.stack-section__text {
+  font-family: var(--font-arnamu);
+  font-size: var(--text-xl);
+  line-height: var(--leading-relaxed);
+  color: var(--color-neutral-400);
+}
+
+/* ── Image block — full width, landscape ratio ───────────── */
+.stack-section__media {
+  width: 100%;
+}
+
+.stack-section__images {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.stack-section__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: contain;
+}
+
+/* ── Viva overrides ───────────────────────────────────────── */
+.viva.stack-section {
+  background-color: #ffffff;
+}
+
+.viva .stack-section__label {
+  /* background-color: #51af3d; */
+  background-color: #0f5431;
+  color: #ffffff;
+  padding: var(--space-1) var(--space-3);
+}
+
+.viva .stack-section__text {
+  color: #000000;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (min-width: 1280px) {
+  .stack-section__label {
+    margin-inline-start: calc(-1 * var(--space-8));
+  }
+
+  .stack-section__title {
+    font-size: var(--text-4xl);
+  }
+}

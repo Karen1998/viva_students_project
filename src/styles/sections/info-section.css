@@ -1,0 +1,124 @@
+/* ============================================================
+   Component — Info Section (shared by About & Ideology)
+   ============================================================ */
+
+.info-section {
+  position: relative;
+  padding: var(--space-24) 0 var(--space-20);
+  background-color: var(--color-neutral-900);
+  color: var(--color-neutral-100);
+}
+
+/* ── Section label ───────────────────────────────────────── */
+.info-section__label {
+  display: block;
+  font-family: var(--font-arnamu);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin-bottom: var(--space-6);
+}
+
+/* ── Inner layout — column on mobile ─────────────────────── */
+.info-section__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+/* ── Text side ────────────────────────────────────────────── */
+.info-section__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  justify-content: center;
+}
+
+.info-section__title {
+  font-family: var(--font-arnamu);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-neutral-100);
+}
+
+.info-section__text {
+  font-family: var(--font-arnamu);
+  font-size: var(--text-xl);
+  line-height: var(--leading-relaxed);
+  color: var(--color-neutral-400);
+}
+
+/* ── Image side ───────────────────────────────────────────── */
+.info-section__media {
+  /* flex-child sizing handled in the desktop breakpoint */
+}
+
+/* Image box — padding creates the gap between the image and
+   the decorative square that peeks out from behind           */
+.info-section__box {
+  position: relative;
+  padding-bottom: var(--space-8);
+}
+
+/* Box variant — square peeks from the start (left) side     */
+.info-section__box--start {
+  padding-left: var(--space-8);
+}
+
+.info-section__box--start .info-section__square {
+  left: 0;
+}
+
+/* Box variant — square peeks from the end (right) side      */
+.info-section__box--end {
+  padding-right: var(--space-8);
+}
+
+.info-section__box--end .info-section__square {
+  right: 0;
+}
+
+.info-section__image {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Decorative square — sits behind the image.
+   Padding on .info-section__box creates the visible gap      */
+.info-section__square {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-primary);
+  z-index: 0;
+}
+
+/* ── Responsive (mobile-first) ───────────────────────────── */
+@media (min-width: 1280px) {
+  .info-section__label {
+    margin-inline-start: calc(-1 * var(--space-8));
+  }
+
+  .info-section__inner {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-16);
+  }
+
+  .info-section__body,
+  .info-section__media {
+    flex: 1;
+  }
+
+  .info-section__title {
+    font-size: var(--text-4xl);
+  }
+}
